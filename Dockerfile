@@ -1,4 +1,4 @@
-FROM golang:1.12 as build
+FROM quay.io/samsung_cnct/golang:1.16.4-alpine as build
 ENV GO111MODULE on
 ENV CGO_ENABLED 0
 RUN mkdir -p /out/usr/bin
