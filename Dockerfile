@@ -8,6 +8,5 @@ RUN go test -v ./...
 RUN go build -o protolock ./cmd/protolock/*.go
 RUN cp protolock /out/usr/bin/protolock
 
-FROM scratch
-COPY --from=build /out/ .
-ENTRYPOINT ["/usr/bin/protolock"]
+FROM cimg/base:2021.04
+COPY --from=build /out/usr/bin/protolock /usr/bin/protolock
